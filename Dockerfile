@@ -1,6 +1,6 @@
 FROM php:7.4-cli
 
-ARG SOURCE_BRANCH=master
+ARG VERSION=master
 
 RUN apt-get update
 RUN apt-get install -y git libzip-dev wget zip
@@ -12,10 +12,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 	&& rm composer-setup.php
 
 RUN cd /tmp && \
-    wget https://github.com/beyondcode/expose/archive/${SOURCE_BRANCH}.zip && \
-    unzip ${SOURCE_BRANCH}.zip && \
+    wget https://github.com/beyondcode/expose/archive/${VERSION}.zip && \
+    unzip ${VERSION}.zip && \
     mkdir /app && \
-    cp -r expose-${SOURCE_BRANCH}/* /app
+    cp -r expose-${VERSION}/* /app
 
 RUN cd /app && composer install && chmod a+x /app/expose
 
