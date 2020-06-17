@@ -31,11 +31,5 @@ docker run -it cangelis/expose serve my-domain.com
 ## Docker build
 
 ```
-sh build.sh <VERSION>
-```
-
-### Example
-
-```
-sh build.sh 1.0.1
+docker build .
 ```
