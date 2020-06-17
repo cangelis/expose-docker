@@ -1,6 +1,6 @@
 FROM php:7.4-cli
 
-ENV SOURCE_BRANCH master
+ARG SOURCE_BRANCH=master
 
 RUN apt-get update
 RUN apt-get install -y git libzip-dev wget zip
